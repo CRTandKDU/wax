@@ -1,0 +1,11 @@
+(func test (result int)
+  (let x str (alloc str "hello\n"))
+  (print x)
+  (free x)
+  (return 0)
+  )
+
+(func main (result int)
+  (call test)
+  (return 0)
+)

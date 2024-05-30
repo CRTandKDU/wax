@@ -1,0 +1,27 @@
+;; Simple recursive function to compute
+;; Fibonacci numbers
+
+(func fib (param i int) (result int)
+	(if (<= i 1) (then
+		(return i)
+	))
+	(return (+
+		(call fib (- i 1))
+		(call fib (- i 2))
+	))
+)
+
+(func main (result int)
+	(let x int 0)
+	(let crlf str (alloc str "\n"))
+	(let tab  str (alloc str "\t"))
+	(for i 2 (< i 10) 1 (do
+    	     (print i)
+	     (print tab)
+	     (set x (call fib i))
+	     (print x)
+	     (print crlf)
+	))	
+	(return 0)
+)
+
